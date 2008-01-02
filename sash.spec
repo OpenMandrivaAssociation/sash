@@ -16,6 +16,7 @@ Patch7:		sash-3.7-segfault.patch
 Patch8:		sash-3.7-special-script-call-esp-for-glibc-post.patch
 Conflicts:      glibc < 6:2.3.3-2mdk
 BuildRequires:	zlib-devel glibc-static-devel e2fsprogs-devel
+Buildroot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 Sash is a simple, standalone, statically linked shell which includes
