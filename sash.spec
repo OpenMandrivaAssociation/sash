@@ -8,7 +8,7 @@ Url:		http://www.canb.auug.org.au/~dbell/
 Source0:	http://www.canb.auug.org.au/~dbell/programs/%{name}-%{version}.tar.bz2
 Patch0:		sash-3.7-optflags.patch
 Patch2: 	sash-3.7-losetup.patch
-Patch3: 	sash-3.4-fix-loop__remove_it_when_kernel_headers_are_fixed.patch
+Patch3: 	sash-3.7-fix-loop__remove_it_when_kernel_headers_are_fixed.patch
 Patch4:		sash-3.7-linux2.6-buildfix.patch
 Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
@@ -30,7 +30,7 @@ shared libraries.
 %setup -q
 %patch0 -p1 -b ".misc"
 %patch2 -p1 -b ".losetup"
-%patch3 -p1
+%patch3 -p1 -b .loop
 %patch4 -p1 -b .peroyvind
 %patch5 -p1 -b .scriptarg
 %patch6 -p1 -b ".pwd"
