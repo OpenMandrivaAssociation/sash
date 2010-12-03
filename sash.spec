@@ -1,7 +1,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.7
-Release:	%mkrel 10
+Release:	%mkrel 11
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
