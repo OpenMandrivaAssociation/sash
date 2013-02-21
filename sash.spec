@@ -14,8 +14,8 @@ Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
 Patch7:		sash-3.7-segfault.patch
 Patch8:		sash-3.7-special-script-call-esp-for-glibc-post.patch
-Conflicts:		glibc < 6:2.3.3-2mdk
-BuildRequires:	zlib-devel
+Conflicts:	glibc < 6:2.3.3-2mdk
+BuildRequires:	pkgconfig(zlib)
 BuildRequires:	glibc-static-devel
 BuildRequires:	pkgconfig(ext2fs)
 
@@ -29,27 +29,25 @@ shared libraries.
 
 %prep
 %setup -q
-%patch0 -p1 -b ".misc"
-%patch2 -p1 -b ".losetup"
-%patch3 -p1 -b .loop
-%patch4 -p1 -b .peroyvind
-%patch5 -p1 -b .scriptarg
-%patch6 -p1 -b ".pwd"
-%patch7 -p1 -b ".segf"
-%patch8 -p1 -b ".scriptarg" -z .pix
+%patch0 -p1 -b .misc~
+%patch2 -p1 -b .losetup~
+%patch3 -p1 -b .loop~
+%patch4 -p1 -b .peroyvind~
+%patch5 -p1 -b .scriptarg~
+%patch6 -p1 -b .pwd~
+%patch7 -p1 -b .segf~
+%patch8 -p1 -b .scriptarg~
 
 %build
-make RPM_OPT_FLAGS="%{optflags}"
+%make RPM_OPT_FLAGS="%{optflags}"
 
 %install
-
-install -D sash %{buildroot}/sbin/sash
-install -D sash.1 %{buildroot}%{_mandir}/man8/sash.8
+install -m755 sash -D %{buildroot}/sbin/sash
+install -m644 sash.1 -D %{buildroot}%{_mandir}/man8/sash.8
 
 %files
-%defattr(644,root,root,755)
-%attr(755,root,root) /sbin/sash
-%_mandir/*/*
+/sbin/sash
+%{_mandir}/man8/sash.8*
 
 %changelog
 * Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 3.7-12mdv2011.0
