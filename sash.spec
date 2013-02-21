@@ -1,7 +1,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.7
-Release:	16
+Release:	17
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
@@ -43,7 +43,7 @@ make RPM_OPT_FLAGS="%{optflags}"
 
 %install
 
-install -s -D sash %{buildroot}/sbin/sash
+install -D sash %{buildroot}/sbin/sash
 install -D sash.1 %{buildroot}%{_mandir}/man8/sash.8
 
 %files
