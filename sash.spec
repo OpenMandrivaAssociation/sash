@@ -39,7 +39,7 @@ shared libraries.
 %patch8 -p1 -b .scriptarg~
 
 %build
-%make RPM_OPT_FLAGS="%{optflags}"
+%make RPM_OPT_FLAGS="%{optflags}" LDFLAGS="-static %{ldflags}"
 
 %install
 install -m755 sash -D %{buildroot}/sbin/sash
