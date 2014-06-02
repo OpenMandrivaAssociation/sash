@@ -1,7 +1,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
-Version:	3.7
-Release:	22
+Version:	3.8
+Release:	1
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
@@ -48,64 +48,3 @@ install -m644 sash.1 -D %{buildroot}%{_mandir}/man8/sash.8
 %files
 /sbin/sash
 %{_mandir}/man8/sash.8*
-
-%changelog
-* Fri May 06 2011 Oden Eriksson <oeriksson@mandriva.com> 3.7-12mdv2011.0
-+ Revision: 669958
-- mass rebuild
-
-* Fri Dec 03 2010 Oden Eriksson <oeriksson@mandriva.com> 3.7-11mdv2011.0
-+ Revision: 607510
-- rebuild
-
-* Mon Mar 15 2010 Oden Eriksson <oeriksson@mandriva.com> 3.7-10mdv2010.1
-+ Revision: 520214
-- rebuilt for 2010.1
-
-* Thu Sep 03 2009 Christophe Fergeau <cfergeau@mandriva.com> 3.7-9mdv2010.0
-+ Revision: 427011
-- rebuild
-
-* Sat Apr 11 2009 Funda Wang <fwang@mandriva.org> 3.7-8mdv2009.1
-+ Revision: 366282
-- rediff loop patch
-- rediff losetup patch
-- rediff optflags patch
-
-  + Antoine Ginies <aginies@mandriva.com>
-    - rebuild
-
-* Wed Jun 18 2008 Thierry Vignaud <tv@mandriva.org> 3.7-7mdv2009.0
-+ Revision: 225365
-- rebuild
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-* Mon Dec 17 2007 Thierry Vignaud <tv@mandriva.org> 3.7-6mdv2008.1
-+ Revision: 126961
-- kill re-definition of %%buildroot on Pixel's request
-
-
-* Mon Feb 12 2007 Tomasz Pawel Gajc <tpg@mandriva.org> 3.7-6mdv2007.0
-+ Revision: 119970
-- Import sash
-
-* Tue Apr 25 2006 Pixel <pixel@mandriva.com> 3.7-5mdk
-- rebuild (ie ensure we are statically linked with a recent zlib, cf #21942)
-
-* Fri Oct 14 2005 Pixel <pixel@mandriva.com> 3.7-4mdk
-- rebuild
-
-* Thu Jun 03 2004 Pixel <pixel@mandrakesoft.com> 3.7-3mdk
-- fedora patch sash-3.6-scriptarg broke --ignore-remaining-args special option
-
-* Sun Apr 18 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 3.7-2mdk
-- fix buildrequires
-
-* Sun Apr 18 2004 Per Øyvind Karlsen <peroyvind@linux-mandrake.com> 3.7-1mdk
-- 3.7
-- fix build with 2.6 kernel headers
-- sync with fedora (P5, P6 & P7)
-- rm -rf $RPM_BUILD_ROOT at the beginning of %%install
-
