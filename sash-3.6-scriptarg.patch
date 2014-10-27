@@ -28,9 +28,9 @@
 @@ -1271,7 +1289,7 @@
  	fprintf(stderr, "Stand-alone shell (version %s)\n", version);
  	fprintf(stderr, "\n");
- 	fprintf(stderr, "Usage: sash [-a] [-q] [-f fileName] [-c command] [-p prompt]\n");
+ 	fprintf(stderr, "Usage: sash [-a] [-q] [-f fileName] [-c command] [-p prompt] [-i]\n");
 -
-+	fprintf(stderr, "Usage: sash [-a] [-q] [-f fileName] [-c command] [-p prompt] [script]\n");
++	fprintf(stderr, "Usage: sash [-a] [-q] [-f fileName] [-c command] [-p prompt] [-i] [script]\n");
  	exit(1);
  }
  

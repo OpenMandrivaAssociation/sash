@@ -1,14 +1,14 @@
 --- sash-3.7/sash.c.pix	2004-06-02 14:02:59.609564675 +0200
 +++ sash-3.7/sash.c	2004-06-02 14:03:56.137579142 +0200
-@@ -405,6 +405,7 @@
+@@ -424,6 +424,7 @@
  	const char *	commandFile;
  	BOOL		quietFlag;
  	BOOL		aliasFlag;
 +	BOOL		ignoreRemainingArgsFlag = FALSE;
+         BOOL		interactiveFlag;
  	char		buf[PATH_LEN];
  
- 	singleCommand = NULL;
-@@ -418,6 +419,13 @@
+@@ -438,6 +439,13 @@
  	argv++;
  	argc--;
  
@@ -22,16 +22,16 @@
  	while ((argc > 0) && (**argv == '-'))
  	{
  		cp = *argv++ + 1;
-@@ -429,7 +437,7 @@
+@@ -449,7 +457,7 @@
  				/*
  				 * Execute specified command.
  				 */
--				if ((argc != 1) || singleCommand)
-+				if ((argc < 1) || singleCommand)
+-				if ((argc != 1) || singleCommand || interactiveFlag)
++				if ((argc < 1) || singleCommand || interactiveFlag)
  					usage();
  
  				singleCommand = *argv++;
-@@ -443,7 +451,7 @@
+@@ -463,7 +471,7 @@
  				 * This is used for sash script files.
  				 * The quiet flag is also set.
  				 */
@@ -40,7 +40,7 @@
  					usage();
  
  				quietFlag = TRUE;
-@@ -489,7 +497,7 @@
+@@ -509,7 +517,7 @@
  
  	/* A single argument is allowed, and it must be a filename which
  	   provides stdin. This allows #! usage. */
@@ -49,7 +49,7 @@
  		int fd;
  
  		fd = open(argv[0], O_RDONLY);
-@@ -505,10 +513,18 @@
+@@ -525,10 +533,18 @@
  		argc--, argv++;
  	}
  
