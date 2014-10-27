@@ -1,3 +1,4 @@
+%define debug_package %{nil}
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
@@ -6,8 +7,6 @@ License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
 Source0:	http://www.canb.auug.org.au/~dbell/programs/%{name}-%{version}.tar.gz
-#Patch3:		sash-3.7-fix-loop__remove_it_when_kernel_headers_are_fixed.patch
-#Patch4:		sash-3.7-linux2.6-buildfix.patch
 Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
 Patch7:		sash-3.7-segfault.patch
