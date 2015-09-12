@@ -2,7 +2,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
-Release:	5
+Release:	6
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
