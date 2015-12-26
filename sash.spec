@@ -1,4 +1,5 @@
 %define debug_package %{nil}
+
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
@@ -29,7 +30,8 @@ shared libraries.
 %apply_patches
 
 %build
-%make OPT="%{optflags}" LDFLAGS="-static %{ldflags}"
+
+%make OPT="%{optflags}" LDFLAGS="-static %{ldflags}" CC=gcc
 
 %install
 install -m755 sash -D %{buildroot}/sbin/sash
