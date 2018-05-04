@@ -3,7 +3,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
-Release:	8
+Release:	9
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
@@ -30,7 +30,7 @@ shared libraries.
 %apply_patches
 
 %build
-
+%setup_compile_flags
 %make OPT="%{optflags}" LDFLAGS="-static %{ldflags}" CC=gcc
 
 %install
