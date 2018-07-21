@@ -3,7 +3,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
-Release:	9
+Release:	10
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
@@ -12,7 +12,6 @@ Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
 Patch7:		sash-3.7-segfault.patch
 Patch8:		sash-3.8-special-script-call-esp-for-glibc-post.patch
-Conflicts:	glibc < 6:2.3.3-2mdk
 BuildRequires:	pkgconfig(zlib)
 BuildRequires:	glibc-static-devel
 BuildRequires:	pkgconfig(ext2fs)
@@ -31,7 +30,7 @@ shared libraries.
 
 %build
 %setup_compile_flags
-%make OPT="%{optflags}" LDFLAGS="-static %{ldflags}" CC=gcc
+%make OPT="%{optflags}" LDFLAGS="-static %{ldflags}"
 
 %install
 install -m755 sash -D %{buildroot}/sbin/sash
