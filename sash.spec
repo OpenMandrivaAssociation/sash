@@ -1,5 +1,3 @@
-%define debug_package %{nil}
-
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
@@ -12,7 +10,7 @@ Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
 Patch7:		sash-3.7-segfault.patch
 Patch8:		sash-3.8-special-script-call-esp-for-glibc-post.patch
-BuildRequires:	pkgconfig(zlib)
+BuildRequires:	zlib-static-devel
 BuildRequires:	glibc-static-devel
 BuildRequires:	pkgconfig(ext2fs)
 
@@ -30,7 +28,7 @@ shared libraries.
 
 %build
 %setup_compile_flags
-%make OPT="%{optflags}" LDFLAGS="-static %{ldflags}"
+%make OPT="%{optflags}" LDFLAGS="-static %{build_ldflags}"
 
 %install
 install -m755 sash -D %{buildroot}/sbin/sash
