@@ -1,3 +1,6 @@
+# Work around incomplete debug packages
+%global _empty_manifest_terminate_build 0
+
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
