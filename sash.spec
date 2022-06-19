@@ -4,7 +4,7 @@
 Summary:	A statically linked shell, including some built-in basic commands
 Name:		sash
 Version:	3.8
-Release:	11
+Release:	12
 License:	GPL
 Group:		Shells
 Url:		http://www.canb.auug.org.au/~dbell/
@@ -26,17 +26,16 @@ failures.  Sash can also be used to safely upgrade to new versions of
 shared libraries.
 
 %prep
-%setup -q
-%autopatch -p1
+%autosetup -p1
 
 %build
 %setup_compile_flags
 %make OPT="%{optflags}" LDFLAGS="-static %{build_ldflags}"
 
 %install
-install -m755 sash -D %{buildroot}/sbin/sash
+install -m755 sash -D %{buildroot}%{_bindir}/sash
 install -m644 sash.1 -D %{buildroot}%{_mandir}/man8/sash.8
 
 %files
-/sbin/sash
+%{_bindir}/sash
 %{_mandir}/man8/sash.8*
