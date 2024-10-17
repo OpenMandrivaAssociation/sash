@@ -7,7 +7,7 @@ Version:	3.8
 Release:	13
 License:	GPL
 Group:		Shells
-Url:		http://www.canb.auug.org.au/~dbell/
+Url:		https://www.canb.auug.org.au/~dbell/
 Source0:	http://www.canb.auug.org.au/~dbell/programs/%{name}-%{version}.tar.gz
 Patch5:		sash-3.6-scriptarg.patch
 Patch6:		sash-pwdfunc.patch
